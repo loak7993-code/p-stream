@@ -24,6 +24,13 @@ function isAllowedQuality(inp: string): inp is SourceQuality {
 export function convertRunoutputToSource(out: {
   stream: Stream;
 }): SourceSliceSource {
+  if (out.stream.type === "iframe") {
+    return {
+      type: "iframe",
+      url: out.stream.url,
+      sandbox: (out.stream as { sandbox?: string[] }).sandbox,
+    };
+  }
   if (out.stream.type === "hls") {
     return {
       type: "hls",

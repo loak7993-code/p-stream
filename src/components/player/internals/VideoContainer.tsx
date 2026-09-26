@@ -62,6 +62,26 @@ function useObjectUrl(cb: () => string | null, deps: any[]) {
   return output;
 }
 
+function IframeElement() {
+  const source = usePlayerStore((s) => s.source);
+  if (!source || source.type !== "iframe") return null;
+  return (
+    <iframe
+      title="P-Stream embed player"
+      className="absolute inset-0 w-full h-screen bg-black"
+      src={source.url}
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      allowFullScreen
+      referrerPolicy="origin"
+      sandbox={
+        source.sandbox
+          ? source.sandbox.join(" ")
+          : "allow-scripts allow-same-origin allow-forms allow-presentation allow-pointer-lock allow-modals allow-popups"
+      }
+    />
+  );
+}
+
 function VideoElement() {
   const videoEl = useRef<HTMLVideoElement>(null);
   const trackEl = useRef<HTMLTrackElement>(null);
@@ -131,5 +151,10 @@ export function VideoContainer() {
   useInitializeSource();
 
   if (!show) return null;
-  return <VideoElement />;
+  return (
+    <>
+      <VideoElement />
+      <IframeElement />
+    </>
+  );
 }

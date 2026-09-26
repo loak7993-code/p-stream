@@ -30,6 +30,11 @@ export type SourceSliceSource =
       url: string;
       headers?: Stream["headers"];
       preferredHeaders?: Stream["preferredHeaders"];
+    }
+  | {
+      type: "iframe";
+      url: string;
+      sandbox?: string[];
     };
 
 const qualitySorting: Record<SourceQuality, number> = {

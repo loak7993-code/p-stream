@@ -263,12 +263,17 @@ export const createSourceSlice: MakeSlice<SourceSlice> = (set, get) => ({
     let qualities: string[] = [];
     if (stream.type === "file") qualities = Object.keys(stream.qualities);
     const qualityPreferences = useQualityStore.getState();
-    const loadableStream = selectQuality(stream, qualityPreferences.quality);
+    // iframe streams render their own player in an <iframe>; the video
+    // element display is bypassed entirely
+    const loadableStream =
+      stream.type === "iframe"
+        ? null
+        : selectQuality(stream, qualityPreferences.quality);
 
     set((s) => {
       s.source = stream;
       s.qualities = qualities as SourceQuality[];
-      s.currentQuality = loadableStream.quality;
+      s.currentQuality = loadableStream?.quality ?? null;
       s.captionList = captions;
       s.interface.error = undefined;
       s.status = playerStatus.PLAYING;
@@ -276,7 +281,7 @@ export const createSourceSlice: MakeSlice<SourceSlice> = (set, get) => ({
       s.currentAudioTrack = null;
     });
     const store = get();
-    store.redisplaySource(startAt);
+    if (stream.type !== "iframe") store.redisplaySource(startAt);
 
     // Trigger external subtitle scraping after stream is loaded
     // This runs asynchronously so it doesn't block the stream loading
@@ -287,6 +292,7 @@ export const createSourceSlice: MakeSlice<SourceSlice> = (set, get) => ({
   redisplaySource(startAt: number) {
     const store = get();
     if (!store.source) return;
+    if (store.source.type === "iframe") return;
     const qualityPreferences = useQualityStore.getState();
     const loadableStream = selectQuality(store.source, {
       automaticQuality: qualityPreferences.quality.automaticQuality,
