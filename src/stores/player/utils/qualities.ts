@@ -1,4 +1,4 @@
-import { Qualities, Stream } from "@p-stream/providers";
+import { Qualities } from "@streamviva/providers";
 
 import { QualityStore } from "@/stores/quality";
 

@@ -67,7 +67,7 @@ function IframeElement() {
   if (!source || source.type !== "iframe") return null;
   return (
     <iframe
-      title="P-Stream embed player"
+      title="StreamViva embed player"
       className="absolute inset-0 w-full h-screen bg-black"
       src={source.url}
       allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
@@ -121,7 +121,7 @@ function VideoElement() {
     subtitleTrack = (
       <track
         ref={trackEl}
-        label="P-Stream Captions"
+        label="StreamViva Captions"
         kind="subtitles"
         srcLang={language}
         src={trackObjectUrl}

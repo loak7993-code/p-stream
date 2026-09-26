@@ -66,7 +66,7 @@ export async function fetchFebboxQuota(febboxKey: string | null): Promise<any> {
 
   console.log("SetupPart.tsx: Fetching Febbox quota");
   try {
-    const response = await fetch("https://fed-api.pstream.mov/quota", {
+    const response = await fetch("https://fed-api.streamviva.mov/quota", {
       headers: {
         "ui-token": febboxKey,
       },
@@ -87,7 +87,7 @@ export async function fetchFebboxQuota(febboxKey: string | null): Promise<any> {
 }
 
 export async function testFebboxKey(febboxKey: string | null): Promise<Status> {
-  const febboxApiTestUrl = `https://fed-api.pstream.mov/movie/tt0325980`;
+  const febboxApiTestUrl = `https://fed-api.streamviva.mov/movie/tt0325980`;
 
   if (!febboxKey) {
     return "unset";

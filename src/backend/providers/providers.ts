@@ -2,7 +2,7 @@ import {
   makeProviders,
   makeStandardFetcher,
   targets,
-} from "@p-stream/providers";
+} from "@streamviva/providers";
 
 import { isExtensionActiveCached } from "@/backend/extension/messaging";
 import {
@@ -15,7 +15,9 @@ import {
 setupM3U8Proxy();
 
 function isDesktopApp(): boolean {
-  return Boolean(typeof window !== "undefined" && window.__PSTREAM_DESKTOP__);
+  return Boolean(
+    typeof window !== "undefined" && window.__STREAMVIVA_DESKTOP__,
+  );
 }
 
 export function getProviders() {

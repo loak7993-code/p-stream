@@ -1,4 +1,4 @@
-import { Stream } from "@p-stream/providers";
+import { Stream } from "@streamviva/providers";
 
 import {
   SourceFileStream,

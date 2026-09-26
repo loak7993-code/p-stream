@@ -1,14 +1,14 @@
 /**
  * Regression tests for the ecosystem breakage that killed the original project:
- * the `@p-stream/providers` package was removed from GitHub (DMCA, 2026-03-17),
+ * the `@streamviva/providers` package was removed from GitHub (DMCA, 2026-03-17),
  * which made every `pnpm install && pnpm build` fail.
  *
  * These tests fail loudly if the providers dependency ever goes missing again.
  */
-import * as providers from "@p-stream/providers";
+import * as providers from "@streamviva/providers";
 import { describe, expect, it } from "vitest";
 
-describe("@p-stream/providers (restored dependency)", () => {
+describe("@streamviva/providers (restored dependency)", () => {
   it("is installed and resolvable", () => {
     expect(Object.keys(providers).length).toBeGreaterThan(0);
     expect(providers.flags).toBeTruthy();

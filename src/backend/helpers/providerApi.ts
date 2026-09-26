@@ -1,4 +1,4 @@
-import { MetaOutput } from "@p-stream/providers";
+import { MetaOutput } from "@streamviva/providers";
 import { jwtDecode } from "jwt-decode";
 
 let metaDataCache: MetaOutput[] | null = null;

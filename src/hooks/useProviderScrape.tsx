@@ -1,4 +1,8 @@
-import { FullScraperEvents, RunOutput, ScrapeMedia } from "@p-stream/providers";
+import {
+  FullScraperEvents,
+  RunOutput,
+  ScrapeMedia,
+} from "@streamviva/providers";
 import { RefObject, useCallback, useEffect, useRef, useState } from "react";
 
 import { isExtensionActiveCached } from "@/backend/extension/messaging";

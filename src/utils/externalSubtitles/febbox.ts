@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { labelToLanguageCode } from "@p-stream/providers";
+import { labelToLanguageCode } from "@streamviva/providers";
 
 import { CaptionListItem } from "@/stores/player/slices/source";
 
@@ -11,9 +11,9 @@ export async function scrapeFebboxCaptions(
   try {
     let url: string;
     if (season && episode) {
-      url = `https://fed-subs.pstream.mov/tv/${imdbId}/${season}/${episode}`;
+      url = `https://fed-subs.streamviva.mov/tv/${imdbId}/${season}/${episode}`;
     } else {
-      url = `https://fed-subs.pstream.mov/movie/${imdbId}`;
+      url = `https://fed-subs.streamviva.mov/movie/${imdbId}`;
     }
 
     // console.log("Searching Febbox subtitles with URL:", url);
