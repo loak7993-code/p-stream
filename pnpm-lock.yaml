@@ -44,7 +44,7 @@ importers:
         version: 1.8.0
       '@p-stream/providers':
         specifier: github:loak7993-code/providers#production
-        version: https://codeload.github.com/loak7993-code/providers/tar.gz/4533173c0c538affac3d6f37e53588cbb1718fd9
+        version: https://codeload.github.com/loak7993-code/providers/tar.gz/bb5f31eaf5e98626eccd6366d9557dc59a9b3205
       '@plasmohq/messaging':
         specifier: ^0.6.2
         version: 0.6.2(react@18.3.1)
@@ -1691,8 +1691,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@p-stream/providers@https://codeload.github.com/loak7993-code/providers/tar.gz/4533173c0c538affac3d6f37e53588cbb1718fd9':
-    resolution: {tarball: https://codeload.github.com/loak7993-code/providers/tar.gz/4533173c0c538affac3d6f37e53588cbb1718fd9}
+  '@p-stream/providers@https://codeload.github.com/loak7993-code/providers/tar.gz/bb5f31eaf5e98626eccd6366d9557dc59a9b3205':
+    resolution: {tarball: https://codeload.github.com/loak7993-code/providers/tar.gz/bb5f31eaf5e98626eccd6366d9557dc59a9b3205}
     version: 3.2.0
 
   '@pkgjs/parseargs@0.11.0':
@@ -6805,7 +6805,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@p-stream/providers@https://codeload.github.com/loak7993-code/providers/tar.gz/4533173c0c538affac3d6f37e53588cbb1718fd9':
+  '@p-stream/providers@https://codeload.github.com/loak7993-code/providers/tar.gz/bb5f31eaf5e98626eccd6366d9557dc59a9b3205':
     dependencies:
       abort-controller: 3.0.0
       cheerio: 1.0.0-rc.12
