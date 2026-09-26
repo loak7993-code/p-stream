@@ -99,8 +99,9 @@ export function DownloadView({ id }: { id: string }) {
     }
 
     const headers = {
-      ...(source?.headers ?? {}),
-      ...(source?.preferredHeaders ?? {}),
+      ...(source && source.type !== "iframe"
+        ? { ...(source.headers ?? {}), ...(source.preferredHeaders ?? {}) }
+        : {}),
     };
 
     window.desktopApi?.startDownload({

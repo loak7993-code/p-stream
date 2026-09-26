@@ -14,22 +14,22 @@ export type SourceFileStream = {
 export type LoadableSource = {
   type: StreamType;
   url: string;
-  headers?: Stream["headers"];
-  preferredHeaders?: Stream["preferredHeaders"];
+  headers?: Record<string, string>;
+  preferredHeaders?: Record<string, string>;
 };
 
 export type SourceSliceSource =
   | {
       type: "file";
       qualities: Partial<Record<SourceQuality, SourceFileStream>>;
-      headers?: Stream["headers"];
-      preferredHeaders?: Stream["preferredHeaders"];
+      headers?: Record<string, string>;
+      preferredHeaders?: Record<string, string>;
     }
   | {
       type: "hls";
       url: string;
-      headers?: Stream["headers"];
-      preferredHeaders?: Stream["preferredHeaders"];
+      headers?: Record<string, string>;
+      preferredHeaders?: Record<string, string>;
     }
   | {
       type: "iframe";

@@ -25,10 +25,11 @@ function extractDomainsFromStream(stream: Stream): string[] {
 
 function buildHeadersFromStream(stream: Stream): Record<string, string> {
   const headers: Record<string, string> = {};
-  Object.entries(stream.headers ?? {}).forEach((entry) => {
-    headers[entry[0]] = entry[1];
-  });
-  Object.entries(stream.preferredHeaders ?? {}).forEach((entry) => {
+  const streamHeaders =
+    stream.type === "iframe"
+      ? {}
+      : { ...(stream.headers ?? {}), ...(stream.preferredHeaders ?? {}) };
+  Object.entries(streamHeaders).forEach((entry) => {
     headers[entry[0]] = entry[1];
   });
   return headers;
