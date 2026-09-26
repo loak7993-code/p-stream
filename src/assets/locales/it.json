@@ -93,7 +93,7 @@
       "disclaimerText": "Nota: StreamViva non ospita alcun file ma visualizza solo il contenuto di fornitori di terze parti. Le questioni legali dovrebbero essere affrontate con loro."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub",
       "twitter": "Twitter",
@@ -161,22 +161,32 @@
     "titles": {
       "day": {
         "default": "Cosa vorresti guardare questo pomeriggio?",
-        "extra": ["Viva StreamViva!"]
+        "extra": [
+          "Viva StreamViva!"
+        ]
       },
       "morning": {
         "default": "Cosa vorresti guardare questa mattina?",
-        "extra": ["Viva StreamViva!"]
+        "extra": [
+          "Viva StreamViva!"
+        ]
       },
       "night": {
         "default": "Cosa vorresti guardare questa sera?",
-        "extra": ["Viva StreamViva!"]
+        "extra": [
+          "Viva StreamViva!"
+        ]
       },
       "420": {
         "default": "Cosa ti piacerebbe guardare questo 20/4?",
-        "extra": ["Buon 20/4 🥳!"]
+        "extra": [
+          "Buon 20/4 🥳!"
+        ]
       },
       "69": {
-        "extra": ["Buon 69 giorno😘!"],
+        "extra": [
+          "Buon 69 giorno😘!"
+        ],
         "default": "Pronto per qualcosa di piccante?"
       }
     },
@@ -624,7 +634,7 @@
     "title": "Supporto",
     "text": "StreamViva è progettato per essere il più intuitivo possibile. Tuttavia, le persone hanno ancora domande e problemi. Questa pagina è qui per aiutare a risolvere queste carenze",
     "q1": {
-      "body": "Be', puoi unirti al <0>Discord di StreamViva</0> ufficiale e porre domande lì oppure puoi inviare un'e-mail a quella fornita in fondo a questa pagina.",
+      "body": "Be', puoi unirti al <0>GitHub di StreamViva</0> ufficiale e porre domande lì oppure puoi inviare un'e-mail a quella fornita in fondo a questa pagina.",
       "title": "Dove posso ottenere aiuto?"
     }
   },

@@ -20,7 +20,7 @@
       "title": "Hoe zit het met mijn gegevens en dergelijke?"
     },
     "q5": {
-      "body": "StreamViva heeft een Discord server die je bovenaan in deze pagina kunt vinden!",
+      "body": "StreamViva heeft een GitHub server die je bovenaan in deze pagina kunt vinden!",
       "title": "Hoe kan ik meer te weten komen?"
     }
   },
@@ -93,7 +93,7 @@
       "disclaimerText": "StreamViva host geen bestanden, maar linkt alleen naar diensten van derden. Juridische kwesties moeten worden opgenomen met de bestandshosts en providers. StreamViva is niet verantwoordelijk voor mediabestanden die worden getoond door de videoproviders."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "Github",
       "twitter": "Twitter / X"
@@ -161,23 +161,33 @@
     "titles": {
       "day": {
         "default": "Wat wil je vanmiddag kijken?",
-        "extra": ["Lang leven StreamViva!"]
+        "extra": [
+          "Lang leven StreamViva!"
+        ]
       },
       "morning": {
         "default": "Waar wil je deze ochtend naar kijken?",
-        "extra": ["Lang leven StreamViva!"]
+        "extra": [
+          "Lang leven StreamViva!"
+        ]
       },
       "night": {
         "default": "Wat wil je vanavond bekijken?",
-        "extra": ["Moe? Ik hoor dat The Exorcist goed is."]
+        "extra": [
+          "Moe? Ik hoor dat The Exorcist goed is."
+        ]
       },
       "420": {
         "default": "Wat wil je deze 4/20 bekijken?",
-        "extra": ["Happy 4/20 🥳"]
+        "extra": [
+          "Happy 4/20 🥳"
+        ]
       },
       "69": {
         "default": "Zin in iets pittigs?",
-        "extra": ["Gelukkige 69e dag 😘!"]
+        "extra": [
+          "Gelukkige 69e dag 😘!"
+        ]
       }
     }
   },
@@ -744,7 +754,7 @@
       "title": "Hoe kan ik een bug of probleem melden?"
     },
     "q1": {
-      "body": "Je kunt lid worden van de officiële <0>P‑Stream Discord</0> en daar vragen stellen, of je kunt een e‑mail sturen naar het adres onderaan deze pagina.",
+      "body": "Je kunt lid worden van de officiële <0>P‑Stream GitHub</0> en daar vragen stellen, of je kunt een e‑mail sturen naar het adres onderaan deze pagina.",
       "title": "Waar kan ik hulp krijgen?"
     }
   },
@@ -782,7 +792,7 @@
     },
     "text": "P‑Stream is niet zomaar uit een kokosnootboom gevallen, het is grotendeels door één persoon gemaakt (en niet zomaar één, maar een zeer epische).",
     "q1": {
-      "body": "Je kunt lid worden van de officiële <0>P‑Stream Discord</0> en daar vragen stellen, of je kunt een e‑mail sturen naar het adres onderaan deze pagina.",
+      "body": "Je kunt lid worden van de officiële <0>P‑Stream GitHub</0> en daar vragen stellen, of je kunt een e‑mail sturen naar het adres onderaan deze pagina.",
       "title": "Waar kan ik hulp krijgen?"
     },
     "title": "Over de maker"

@@ -122,13 +122,7 @@ export function AdsPart(): JSX.Element | null {
             {adContentUrl[0] !== "null" && (
               <div>
                 <p className="text-xs text-type-dimmed text-center pt-2 mx-4">
-                  <a
-                    href="https://discord.gg/mcjnJK98Gd"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {adContentUrl[0]}
-                  </a>
+                  {adContentUrl[0]}
                 </p>
               </div>
             )}

@@ -93,7 +93,7 @@
       "disclaimerText": "StreamViva не хоства никакви файлове, а просто предоставя връзки към услуги от трета страна. Правните въпроси следва да се разглеждат с доставчиците на файлове. StreamViva не носи отговорност за никакви медийни файлове, предоставени от видео доставчици."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "Github",
       "twitter": "Twitter"
@@ -159,22 +159,32 @@
     "titles": {
       "day": {
         "default": "Какво бихте искали да гледате този следобед?",
-        "extra": ["Viva la StreamViva!"]
+        "extra": [
+          "Viva la StreamViva!"
+        ]
       },
       "morning": {
         "default": "Какво бихте искали да гледате тази сутрин?",
-        "extra": ["Viva la StreamViva!"]
+        "extra": [
+          "Viva la StreamViva!"
+        ]
       },
       "night": {
         "default": "Какво бихте искали да гледате тази вечер?",
-        "extra": ["Viva la StreamViva!"]
+        "extra": [
+          "Viva la StreamViva!"
+        ]
       },
       "69": {
         "default": "За нещо пикантно?",
-        "extra": ["Честит 69 ден 😘!"]
+        "extra": [
+          "Честит 69 ден 😘!"
+        ]
       },
       "420": {
-        "extra": ["Честит 4/20 🥳!"],
+        "extra": [
+          "Честит 4/20 🥳!"
+        ],
         "default": "Какво бихте искали да гледате този 4/20?"
       }
     }

@@ -21,7 +21,7 @@
     "q5": {
       "section": "geral",
       "title": "Como posso saber mais?",
-      "body": "O StreamViva tem um servidor no Discord, que podes encontrar no topo desta página!"
+      "body": "O StreamViva tem um servidor no GitHub, que podes encontrar no topo desta página!"
     },
     "q25": {
       "section": "linguagem",
@@ -34,7 +34,7 @@
       "section": "pesquisa"
     },
     "q6": {
-      "body": "Ainda não, mas podes instalá-lo como uma PWA (Progressive Web App). No iOS, usa o Safari → Partilhar → Adicionar ao Ecrã Principal. No Android, usa o Chrome → 3 pontos → Adicionar ao Ecrã Principal. Há um APK experimental disponível no nosso Discord, mas não é recomendado.",
+      "body": "Ainda não, mas podes instalá-lo como uma PWA (Progressive Web App). No iOS, usa o Safari → Partilhar → Adicionar ao Ecrã Principal. No Android, usa o Chrome → 3 pontos → Adicionar ao Ecrã Principal. Há um APK experimental disponível no nosso GitHub, mas não é recomendado.",
       "title": "Existe alguma app do StreamViva?",
       "section": "geral"
     },
@@ -64,7 +64,7 @@
       "section": "reprodução"
     },
     "q20": {
-      "body": "A FED API é o nosso scraper privado que obtém streams diretamente do Febbox. Cada conta gratuita do Febbox inclui 100 GB/mês de largura de banda ilimitada, e usamos o teu token de interface para fazer a pesquisa como se estivesses a ver o conteúdo pessoalmente. A configuração é mais fácil através do navegador no computador, mas há instruções para telemóvel disponíveis no nosso Discord.",
+      "body": "A FED API é o nosso scraper privado que obtém streams diretamente do Febbox. Cada conta gratuita do Febbox inclui 100 GB/mês de largura de banda ilimitada, e usamos o teu token de interface para fazer a pesquisa como se estivesses a ver o conteúdo pessoalmente. A configuração é mais fácil através do navegador no computador, mas há instruções para telemóvel disponíveis no nosso GitHub.",
       "title": "O que é o FED API?",
       "section": "conexões"
     },
@@ -207,7 +207,7 @@
       "disclaimerText": "StreamViva não hospeda quaisquer ficheiros, apenas faz ligações para serviços de terceiros. Problemas legais devem ser tratados com os anfitriões e fornecedores de ficheiros. O StreamViva não é responsável por quaisquer ficheiros multimédia mostrados pelos fornecedores de vídeo."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub",
       "twitter": "Twitter",
@@ -281,19 +281,27 @@
       },
       "morning": {
         "default": "O que gostaria de assistir esta manhã?",
-        "extra": ["Dizem que Antes do Amanhecer é bom"]
+        "extra": [
+          "Dizem que Antes do Amanhecer é bom"
+        ]
       },
       "night": {
         "default": "O que gostaria de assistir esta noite?",
-        "extra": ["Cansado? Dizem que O Exorcista é bom."]
+        "extra": [
+          "Cansado? Dizem que O Exorcista é bom."
+        ]
       },
       "420": {
         "default": "O que gostarias de ver neste 4/20?",
-        "extra": ["Feliz 4/20 🥳!"]
+        "extra": [
+          "Feliz 4/20 🥳!"
+        ]
       },
       "69": {
         "default": "Apetece-te algo picante?",
-        "extra": ["Feliz dia 69 😘!"]
+        "extra": [
+          "Feliz dia 69 😘!"
+        ]
       }
     },
     "mediaCard": {

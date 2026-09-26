@@ -28,7 +28,7 @@
     "help": "Tidak dapat mencari jawaban? <0>Dapatkan dukungan di sini.</0>",
     "searchPlaceholder": "Pencarian FAQ...",
     "q6": {
-      "body": "Belum ada. Tapi bisa kamu install sebagai PWA (Progressive Web App). Pada IOS, menggunakan safari → Share → Tambahkan ke Home Screen. APK tersedia dalam Discord dan masih experiment, tidak direkomendasikan.",
+      "body": "Belum ada. Tapi bisa kamu install sebagai PWA (Progressive Web App). Pada IOS, menggunakan safari → Share → Tambahkan ke Home Screen. APK tersedia dalam GitHub dan masih experiment, tidak direkomendasikan.",
       "title": "Apakah ada aplikasi StreamViva?",
       "section": "Umum"
     },
@@ -59,7 +59,7 @@
     },
     "q5": {
       "title": "Bagaimana saya bisa mengetahui lebih lanjut?",
-      "body": "StreamViva memiliki Discord server yang bisa diakses melalui header dihalaman ini!",
+      "body": "StreamViva memiliki GitHub server yang bisa diakses melalui header dihalaman ini!",
       "section": "Umum"
     },
     "q7": {
@@ -160,7 +160,7 @@
       "disclaimerText": "StreamViva tidak menyimpan berkas media apapun, aplikasi ini hanya menampilkan tautan dari pihak ketiga. Sengketa hukum harus diajukan langsung kepada penyedia pihak ketiga. StreamViva tidak bertanggung jawab atas berkas media yang ditampilkan oleh penyedia pihak ketiga."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub"
     },
@@ -213,11 +213,15 @@
       },
       "morning": {
         "default": "Apa yang ingin anda tonton pagi ini?",
-        "extra": ["Kayaknya film Before Sunrise bagus deh"]
+        "extra": [
+          "Kayaknya film Before Sunrise bagus deh"
+        ]
       },
       "night": {
         "default": "Apa yang ingin Anda tonton malam ini?",
-        "extra": ["Capek? Saya dengar The Exocist bagus."]
+        "extra": [
+          "Capek? Saya dengar The Exocist bagus."
+        ]
       }
     }
   },

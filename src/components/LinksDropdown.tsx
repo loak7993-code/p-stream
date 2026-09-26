@@ -347,12 +347,6 @@ export function LinksDropdown(props: { children: React.ReactNode }) {
                 icon={Icons.GITHUB}
               />
             )}
-            {conf().DISCORD_LINK && (
-              <CircleDropdownLink
-                href={conf().DISCORD_LINK}
-                icon={Icons.DISCORD}
-              />
-            )}
             <CircleDropdownLink href="/support" icon={Icons.SUPPORT} />
           </div>
         </div>

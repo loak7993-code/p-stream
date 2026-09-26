@@ -20,7 +20,7 @@
       "title": "Entä tietoni ja muut asiat?"
     },
     "q5": {
-      "body": "StreamVivailla on Discord-palvelin, jonka löydät tämän sivun yläosasta!",
+      "body": "StreamVivailla on GitHub-palvelin, jonka löydät tämän sivun yläosasta!",
       "title": "Miten voin saada lisätietoa?"
     }
   },
@@ -93,7 +93,7 @@
       "disclaimerText": "StreamViva ei isännöi tiedostoja, se vain linkittää kolmannen osapuolen palveluihin. Lakiasioista tulee ottaa yhteyttä tiedostoisäntään ja palveluntarjoajiin. StreamViva ei ole vastuussa videontarjoajien näyttämistä mediatiedostoista."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub",
       "twitter": "Twitter",
@@ -174,15 +174,21 @@
       },
       "night": {
         "default": "Mitä haluaisit katsoa tänä iltana?",
-        "extra": ["Väsynyt? Kuulin, että Manaaja (The Exorcist) on hyvä!"]
+        "extra": [
+          "Väsynyt? Kuulin, että Manaaja (The Exorcist) on hyvä!"
+        ]
       },
       "420": {
         "default": "Mitä tekisi mieli katsoa tänä 4/20-päivänä?",
-        "extra": ["Hyvää 4/20-päivää 🥳!"]
+        "extra": [
+          "Hyvää 4/20-päivää 🥳!"
+        ]
       },
       "69": {
         "default": "Ootko valmis johonkin kuumaan?",
-        "extra": ["Hyvää 69-päivää 😘!"]
+        "extra": [
+          "Hyvää 69-päivää 😘!"
+        ]
       }
     },
     "mediaCard": {

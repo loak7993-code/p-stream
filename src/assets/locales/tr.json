@@ -24,7 +24,7 @@
       "section": "genel"
     },
     "q5": {
-      "body": "StreamViva’in bir Discord sunucusu var, sayfanın en üst kısmına bak!",
+      "body": "StreamViva’in bir GitHub sunucusu var, sayfanın en üst kısmına bak!",
       "title": "Daha fazlasını nasıl bulabilirim?"
     },
     "help": "Bir cevap bulamıyor musunuz? <0>Buradan destek alın.</0>",
@@ -106,7 +106,7 @@
       "disclaimerText": "StreamViva herhangi bir dosya barındırmaz, yalnızca 3. parti hizmetlere bağlantı verir. Yasal meseleler, dosya barındırıcıları ve sağlayıcıları ile görüşülmelidir. StreamViva, video sağlayıcıları tarafından gösterilen hiçbir medya dosyasından sorumlu değildir."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub",
       "twitter": "Twitter",
@@ -181,19 +181,27 @@
       },
       "morning": {
         "default": "Bu sabah ne izlemek istersiniz?",
-        "extra": ["Before Sunrise'a iyi diyorlar"]
+        "extra": [
+          "Before Sunrise'a iyi diyorlar"
+        ]
       },
       "night": {
         "default": "Bu akşam ne izlemek istersiniz?",
-        "extra": ["Yoruldun mu? The Exorcist'e iyi diyorlar."]
+        "extra": [
+          "Yoruldun mu? The Exorcist'e iyi diyorlar."
+        ]
       },
       "420": {
         "default": "Bu 4/20’de ne izlemek istersin?",
-        "extra": ["Mutlu 4/20 🥳!"]
+        "extra": [
+          "Mutlu 4/20 🥳!"
+        ]
       },
       "69": {
         "default": "Baharatlı bir şeyler denemeye ne dersin?",
-        "extra": ["Mutlu 69 günü 😘!"]
+        "extra": [
+          "Mutlu 69 günü 😘!"
+        ]
       }
     },
     "mediaCard": {

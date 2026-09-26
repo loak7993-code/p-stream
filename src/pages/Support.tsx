@@ -3,10 +3,8 @@ import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 import { ThinContainer } from "@/components/layout/ThinContainer";
-import { MwLink } from "@/components/text/Link";
 import { Heading1, Paragraph } from "@/components/utils/Text";
 import { PageTitle } from "@/pages/parts/util/PageTitle";
-import { conf } from "@/setup/config";
 
 import { SubPageLayout } from "./layouts/SubPageLayout";
 
@@ -69,15 +67,7 @@ export function SupportPage() {
             }}
           />
         </Paragraph>
-        <Ol
-          items={[
-            <Item title={t("support.q1.title")}>
-              <Trans i18nKey="support.q1.body">
-                <MwLink to={conf().DISCORD_LINK} />
-              </Trans>
-            </Item>,
-          ]}
-        />
+        <Ol items={[]} />
       </ThinContainer>
     </SubPageLayout>
   );

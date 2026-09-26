@@ -153,16 +153,7 @@ export function OnboardingPage() {
             )}
           </div>
         </div>
-        <div>
-          <Trans i18nKey="onboarding.start.moreInfo.explainer.outro">
-            <a
-              href="https://discord.com/invite/7z6znYgrTG"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-type-link"
-            />
-          </Trans>
-        </div>
+        <div />
       </FancyModal>
       <BiggerCenterContainer>
         <Stepper steps={2} current={1} className="mb-12" />

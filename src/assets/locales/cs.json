@@ -95,7 +95,7 @@
       "disclaimerText": "StreamViva nehostuje žádné soubory, pouze odkazuje na služby třetích stran. Právní záležitosti by měly být řešeny s hostiteli souborů a poskytovateli. StreamViva nenese odpovědnost za žádné mediální soubory zobrazené poskytovateli videa."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub"
     },
@@ -142,15 +142,21 @@
     "titles": {
       "day": {
         "default": "Na co byste se chtěli dnes odpoledne dívat?",
-        "extra": ["Chceš zažít dobrodružství? Jurský Park je pro tebe."]
+        "extra": [
+          "Chceš zažít dobrodružství? Jurský Park je pro tebe."
+        ]
       },
       "morning": {
         "default": "Na co byste se chtěli dnes ráno dívat?",
-        "extra": ["Slyšel jsem, že Před úsvitem je super"]
+        "extra": [
+          "Slyšel jsem, že Před úsvitem je super"
+        ]
       },
       "night": {
         "default": "Na co byste se chtěli dnes večer dívat?",
-        "extra": ["Unaven? Slyšel jsem, že Vymítač ďábla je super."]
+        "extra": [
+          "Unaven? Slyšel jsem, že Vymítač ďábla je super."
+        ]
       }
     }
   },

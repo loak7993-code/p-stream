@@ -82,7 +82,7 @@
       "disclaimerText": "StreamViva nemitina nekādus failus, tas tikai veido saites uz trešās puses pakalpojumiem. Juridiskie jautājumi ir jārisina ar failu resursdatoriem un nodrošinātājiem. StreamViva nav atbildīgs par video pakalpojumu sniedzēju parādītajiem multivides failiem."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Autortiesību likums",
       "github": "GitHub"
     },
@@ -125,11 +125,15 @@
       },
       "morning": {
         "default": "Ko tu gribētu šorīt noskatīties?",
-        "extra": ["Es dzirdu, ka Pirms saullēkta ir labs"]
+        "extra": [
+          "Es dzirdu, ka Pirms saullēkta ir labs"
+        ]
       },
       "night": {
         "default": "Ko tu gribētu šovakar skatīties?",
-        "extra": ["Noguris? Es dzirdu, ka Exorcist ir labs."]
+        "extra": [
+          "Noguris? Es dzirdu, ka Exorcist ir labs."
+        ]
       }
     }
   },

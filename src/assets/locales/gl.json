@@ -85,7 +85,7 @@
       "disclaimerText": "StreamViva non aloxa ningún arquivo, simplemente enlaza con servizos de terceiros. Os problemas legais deben ser tratados cós proovedores de arquivos e servizos. StreamViva non se fai responsable dos arquivos multimedia mostrados polos provedores de video."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub"
     },
@@ -138,11 +138,15 @@
       },
       "morning": {
         "default": "Que che gustaría ver esta mañá?",
-        "extra": ["Escoitei que “Antes del amanecer” é boa"]
+        "extra": [
+          "Escoitei que “Antes del amanecer” é boa"
+        ]
       },
       "night": {
         "default": "Que che gustaría ver esta noite?",
-        "extra": ["Canso? Escoitei que “El Exorcista” é boa."]
+        "extra": [
+          "Canso? Escoitei que “El Exorcista” é boa."
+        ]
       }
     }
   },

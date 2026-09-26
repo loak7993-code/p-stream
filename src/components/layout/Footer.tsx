@@ -80,11 +80,6 @@ export function Footer() {
               {t("footer.links.github")}
             </FooterLink>
           )}
-          {conf().DISCORD_LINK && (
-            <FooterLink icon={Icons.DISCORD} href={conf().DISCORD_LINK}>
-              {t("footer.links.discord")}
-            </FooterLink>
-          )}
           <div className="inline md:hidden">
             <Legal />
           </div>

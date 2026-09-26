@@ -16,7 +16,7 @@
     },
     "title": "Acerca de StreamViva",
     "q5": {
-      "body": "¡StreamViva tiene un servidor de Discord que se puede encontrar en el encabezado de esta página!",
+      "body": "¡StreamViva tiene un servidor de GitHub que se puede encontrar en el encabezado de esta página!",
       "title": "¿Cómo puedo obtener más información?"
     },
     "q4": {
@@ -93,7 +93,7 @@
       "disclaimerText": "StreamViva no aloja ningún archivo, simplemente enlaza a servicios de terceros. Los problemas legales deben ser tratados con los proveedores de archivos y servicios. StreamViva no se hace responsable de los archivos multimedia mostrados por los proveedores de vídeo."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub",
       "twitter": "Twitter",
@@ -167,19 +167,27 @@
       },
       "morning": {
         "default": "¿Qué te gustaría ver esta mañana?",
-        "extra": ["Escuché que “Antes del amanecer” es buena"]
+        "extra": [
+          "Escuché que “Antes del amanecer” es buena"
+        ]
       },
       "night": {
         "default": "¿Qué te gustaría ver esta noche?",
-        "extra": ["¿Cansado? Escuché que “El Exorcista” es buena."]
+        "extra": [
+          "¿Cansado? Escuché que “El Exorcista” es buena."
+        ]
       },
       "420": {
         "default": "¿Qué te gustaría ver este 4/20?",
-        "extra": ["¡Feliz 4/20 🥳!"]
+        "extra": [
+          "¡Feliz 4/20 🥳!"
+        ]
       },
       "69": {
         "default": "¿Te apetece algo picante?",
-        "extra": ["¡Feliz día 69 😘!"]
+        "extra": [
+          "¡Feliz día 69 😘!"
+        ]
       }
     },
     "mediaCard": {
@@ -294,7 +302,7 @@
           "options": "Tus Opciones:",
           "extensionDescription": "La extensión te brinda acceso a la mayoría de las fuentes. Actúa como un proxy local y puede manejar sitios que necesitan cookies especiales o encabezados para cargar.",
           "proxy": "2. Proxy",
-          "outro": "¡Si tienes más preguntas en cómo esto funciona, siéntete libre de preguntar en el <0>StreamViva Discord</0> servidor!"
+          "outro": "¡Si tienes más preguntas en cómo esto funciona, siéntete libre de preguntar en el <0>StreamViva GitHub</0> servidor!"
         },
         "title": "Comprender una configuración",
         "recommended": {

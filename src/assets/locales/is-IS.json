@@ -85,7 +85,7 @@
       "disclaimerText": "StreamViva hýsir engar skrár, það tengist eingöngu þjónustu þriðja aðila. Lagleg atriði ættu að vera rædd við skráarhýsinga og veitanda. StreamViva er ekki ábyrg fyrir neinum skrám sýndar af myndbands veitöndum."
     },
     "links": {
-      "discord": "Discord",
+      "discord": "Viva la StreamViva!",
       "legal": "Legal / DMCA",
       "github": "GitHub"
     },
@@ -138,11 +138,15 @@
       },
       "morning": {
         "default": "Hvað myndirðu vilja horfa á þessum morgni?",
-        "extra": ["Ég heyrði að Before Sunrise sé góð"]
+        "extra": [
+          "Ég heyrði að Before Sunrise sé góð"
+        ]
       },
       "night": {
         "default": "Hvað myndirðu vilja horfa á í nótt?",
-        "extra": ["Þreytt? Ég heyrði að The Exorcist sé góð."]
+        "extra": [
+          "Þreytt? Ég heyrði að The Exorcist sé góð."
+        ]
       }
     }
   },
