@@ -1,45 +1,43 @@
-> [!WARNING]
-> This project is no longer maintained.
-> Due to legal pressure, I have to stop the project.
-> Thanks to everyone who contributed and supported the project!
+# P-Stream (Community Continuation)
 
-# P-Stream
+> [!NOTE]
+> The original p-stream project was discontinued in March 2026. This is a **community continuation** — the project is actively maintained again here.
+>
+> The original providers package (`p-stream/providers`) was removed from GitHub, which broke every build. This continuation ships with a restored providers package at [`loak7993-code/providers`](https://github.com/loak7993-code/providers) and a fixed build chain.
 
-[![P-Stream Image](.github/P-Stream.png)](https://p-stream.github.io/docs/)
+[![P-Stream Image](.github/P-Stream.png)](#running-locally)
+
+## Status
+
+| Component | State |
+| --------- | ----- |
+| Frontend (this repo) | ✅ Maintained — builds and runs from this fork |
+| Providers package | ✅ Restored at [loak7993-code/providers](https://github.com/loak7993-code/providers) |
+| CI (lint / test / build / docker) | ✅ Fixed — workflows now trigger on the real default branch (`production`) with the correct pnpm version |
+| Backend / proxy / extension | ⚠️ Original repos archived or gone — self-host required for those pieces |
 
 ## Quick Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fp-stream%2Fp-stream)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Floak7993-code%2Fp-stream)
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/p-stream/p-stream)
+**NOTE: To self-host, more setup is required (TMDB key, CORS proxy, HLS proxy, backend). See `example.env`.**
 
-**NOTE: To self-host, more setup is required. Check the [docs](https://p-stream.github.io/docs/) to properly set up!!!!**
+## Changes from the original
 
-## Links And Resources
-
-| Service       | Link                                            | Source Code                                            |
-| ------------- | ----------------------------------------------- | ------------------------------------------------------ |
-| P-Stream Docs | [docs](https://docs.pstream.mov)                | [source code](https://github.com/p-stream/docs)        |
-| Extension     | [extension](https://docs.pstream.mov/extension) | [source code](https://github.com/p-stream/browser-ext) |
-| Proxy         | [simple-proxy](https://docs.pstream.mov/proxy)  | [source code](https://github.com/p-stream/sudo-proxy)  |
-| Backend       | [backend](https://server.fifthwit.net)          | [source code](https://github.com/p-stream/backend)     |
-| Frontend      | [P-Stream](https://docs.pstream.mov/instances)  | [source code](https://github.com/p-stream/p-stream)    |
-| Weblate       | [weblate](https://weblate.pstream.mov)          |                                                        |
-
-**_I provide these if you are not able to host yourself, though I do encourage hosting the frontend._**
-
-## Referrers
-
-- [FMHY (Voted as #1 streaming site of 2024, 2025)](https://fmhy.net)
+- Restored the `@p-stream/providers` dependency from a post-takedown mirror — the frontend **builds again**
+- Fixed CI: workflows triggered on a nonexistent `master` branch and installed pnpm 8 (project requires 9.14.4); now they run on `production` with lint + test + build + docker jobs
+- Fixed the README quick-start (`cd smov` → `cd p-stream`)
+- Pointed GitHub links at the continuation repo
+- Version bumped to `5.4.0` (continuation release)
 
 ## Running Locally
 
 Type the following commands into your terminal / command line to run P-Stream locally
 
 ```bash
-git clone https://github.com/p-stream/p-stream.git
-cd smov
-git pull
+git clone https://github.com/loak7993-code/p-stream.git
+cd p-stream
+cp example.env .env   # fill in your keys / proxy URLs
 pnpm install
 pnpm run dev
 ```
@@ -51,7 +49,7 @@ Then you can visit the local instance [here](http://localhost:5173) or, at local
 To update a P-Stream instance you can type the below commands into a terminal at the root of your project.
 
 ```bash
-git remote add upstream https://github.com/p-stream/p-stream.git
+git remote add upstream https://github.com/loak7993-code/p-stream.git
 git fetch upstream # Grab the contents of the new remote source
 git checkout <YOUR_MAIN_BRANCH>  # Most likely this would be `origin/production`
 git merge upstream/production
@@ -61,6 +59,19 @@ git commit -m "Update p-stream instance (merge upstream/production)"
 git push  # Push to YOUR repository
 ```
 
-## Contact Me / Discord
+## Updating providers
 
-[Discord](https://fluxer.gg/VLEQLVSM)
+Providers (the scrapers/sources that find streams) live in a separate package:
+
+```bash
+pnpm run update-providers   # pull latest from the continuation's providers repo
+pnpm run update-and-build   # update providers and rebuild
+```
+
+## Contributing
+
+Issues and PRs are open on this repo. Bug reports and feature requests via the issue templates are welcome.
+
+## Credits
+
+All credit for the original project goes to the p-stream team and contributors. This continuation exists to keep their work buildable and running.
