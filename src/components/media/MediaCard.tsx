@@ -58,7 +58,7 @@ export function MediaCardSkeleton() {
         flareSize={300}
         cssColorVar="--colors-mediaCard-hoverAccent"
         backgroundClass="bg-mediaCard-hoverBackground duration-100"
-        className="rounded-none bg-background-main group-hover:opacity-100"
+        className="rounded-xl bg-background-main group-hover:opacity-100"
       />
       <Flare.Child className="pointer-events-auto relative mb-2 p-[0.4em] transition-transform duration-300 opacity-60">
         <div className="animate-pulse">
@@ -176,9 +176,9 @@ function MediaCardContent({
   return (
     <div ref={targetRef as React.RefObject<HTMLDivElement>}>
       <Flare.Base
-        className={`group -m-[0.705em] rounded-none bg-background-main transition-all duration-150 focus:relative focus:z-10 ${
+        className={`group -m-[0.705em] rounded-xl bg-background-main transition-all duration-300 ease-out focus:relative focus:z-10 ${
           canLink
-            ? "rounded-none hover:bg-mediaCard-hoverBackground hover:shadow-[0_0_0_1px_hsla(189,92%,64%,0.8),3px_3px_0_0_hsla(290,82%,64%,0.55)] hover:-translate-y-0.5 tabbable"
+            ? "rounded-xl hover:bg-mediaCard-hoverBackground hover:shadow-[0_0_0_1px_hsla(245,84%,70%,0.22),0_16px_48px_-16px_hsla(245,80%,55%,0.4)] hover:-translate-y-1 tabbable"
             : ""
         } ${closable ? "jiggle" : ""}`}
         tabIndex={canLink ? 0 : -1}

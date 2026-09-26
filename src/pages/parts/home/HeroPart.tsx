@@ -83,21 +83,27 @@ export function HeroPart({
       >
         {showTitle && (!isTV || search.length === 0) ? (
           <div className="relative z-10 mb-16 viva-rise viva-rise-1">
-            <div className="font-mono-label mb-3 text-buttons-toggle">
-              NOW TRANSMITTING
+            <div className="font-mono-label mb-4 text-iris-200/80">
+              now showing
             </div>
             <HeroTitle className="mx-auto max-w-xl">{title}</HeroTitle>
-            <div className="mx-auto mt-5 flex items-center justify-center gap-3">
+            <div className="mx-auto mt-6 flex items-center justify-center gap-4">
               <span
-                className="inline-block h-2 w-2 rounded-none"
-                style={{ background: "hsla(0, 84%, 64%, 1)" }}
+                className="h-px w-14"
+                style={{
+                  background:
+                    "linear-gradient(90deg, transparent, hsla(245,70%,70%,0.7))",
+                }}
               />
               <span className="font-mono-label text-type-secondary">
-                signal · live · 35 sources
+                movies · tv · anime
               </span>
               <span
-                className="inline-block h-2 w-2 rounded-none"
-                style={{ background: "hsla(189, 92%, 64%, 1)" }}
+                className="h-px w-14"
+                style={{
+                  background:
+                    "linear-gradient(90deg, hsla(245,70%,70%,0.7), transparent)",
+                }}
               />
             </div>
           </div>

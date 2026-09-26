@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-  font-family: "Archivo", system-ui, sans-serif !important;
+  font-family: "Instrument Sans", system-ui, sans-serif !important;
   @apply bg-background-main !important;
   @apply font-main text-type-text;
   min-height: 100vh;
@@ -43,75 +43,42 @@ html[data-no-scroll] body {
 /* ---------- StreamViva: Sunset Marquee design system ---------- */
 
 :root {
-  --sig-cyan: hsla(189, 92%, 64%, 1);
-  --sig-cyan-bright: hsla(190, 100%, 74%, 1);
-  --sig-magenta: hsla(290, 82%, 64%, 1);
-  --sig-red: hsla(0, 84%, 64%, 1);
-  --sig-void: hsla(220, 15%, 5%, 1);
+  --silk-iris: hsla(245, 84%, 70%, 1);
+  --silk-iris-soft: hsla(245, 76%, 78%, 1);
+  --silk-pearl: hsla(40, 60%, 92%, 1);
 }
 
 ::selection {
-  background: hsla(189, 92%, 55%, 0.4);
-  color: hsla(190, 100%, 96%, 1);
+  background: hsla(245, 70%, 60%, 0.35);
+  color: hsla(240, 30%, 99%, 1);
 }
 
-/* scanline overlay — the texture of a late-night transmission */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 3px,
-    hsla(190, 90%, 60%, 0.014) 3px,
-    hsla(190, 90%, 60%, 0.014) 4px
-  );
-  mix-blend-mode: screen;
-}
-
-/* faint broadcast grid on the far background */
+/* soft ambient aura — quiet depth at the top of the page */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image:
-    linear-gradient(hsla(190, 80%, 60%, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, hsla(190, 80%, 60%, 0.03) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 0%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 0%, transparent 75%);
+  background:
+    radial-gradient(ellipse 70% 40% at 50% -8%, hsla(245, 60%, 24%, 0.5) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 85% 8%, hsla(260, 50%, 20%, 0.25) 0%, transparent 70%);
 }
 
-/* display type — the broadcast voice: heavy, wide, cold */
+/* display type — the editorial voice: refined serif */
 .font-display {
-  font-family: "Archivo", system-ui, sans-serif !important;
-  font-variation-settings: "wdth" 115;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
+  font-family: "Instrument Serif", Georgia, serif !important;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
-/* mono microcopy — signal labels, tickers, metadata */
-.font-mono-label {
-  font-family: "IBM Plex Mono", monospace !important;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.72em;
-  font-weight: 500;
-}
-
-/* signal gradient text: cyan into magenta interference */
+/* iris-to-pearl sheen text */
 .viva-gradient-text {
   background: linear-gradient(
-    96deg,
-    hsla(190, 100%, 78%, 1) 0%,
-    hsla(189, 92%, 64%, 1) 55%,
-    hsla(290, 82%, 66%, 1) 130%
+    100deg,
+    hsla(243, 92%, 82%, 1) 0%,
+    hsla(245, 84%, 72%, 1) 45%,
+    hsla(40, 55%, 88%, 1) 110%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -119,41 +86,38 @@ body::before {
   color: transparent;
 }
 
-/* signal edge — hard cyan ring, no soft glow */
+/* soft iris ring — gentle presence */
 .viva-glow {
-  box-shadow: 0 0 0 1px hsla(189, 92%, 64%, 0.4);
+  box-shadow:
+    0 0 0 1px hsla(245, 60%, 60%, 0.18),
+    0 8px 32px -12px hsla(245, 70%, 55%, 0.28);
 }
 
 .viva-glow-hover {
-  transition: box-shadow 0.18s steps(3, end), transform 0.18s steps(3, end);
+  transition: box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .viva-glow-hover:hover {
   box-shadow:
-    0 0 0 1px hsla(189, 92%, 64%, 0.9),
-    4px 4px 0 0 hsla(290, 82%, 64%, 0.55);
+    0 0 0 1px hsla(245, 70%, 65%, 0.35),
+    0 12px 44px -12px hsla(245, 75%, 58%, 0.4);
 }
 
-/* staggered entrance — hard cut with signal sweep */
+/* staggered entrance — smooth, quiet */
 @keyframes viva-rise {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(10px);
-    clip-path: inset(0 100% 0 0);
+    transform: translateY(12px);
   }
-  60% {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-  }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
-    clip-path: inset(0 0 0 0);
   }
 }
 
 .viva-rise {
-  animation: viva-rise 0.5s steps(8, end) both;
+  animation: viva-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .viva-rise-1 { animation-delay: 0.05s; }
@@ -161,35 +125,21 @@ body::before {
 .viva-rise-3 { animation-delay: 0.23s; }
 .viva-rise-4 { animation-delay: 0.32s; }
 
-/* ON AIR blinker */
+/* soft breathing pulse */
 @keyframes viva-bulb {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.25; }
+  50% { opacity: 0.45; }
 }
 
 .viva-bulb {
-  animation: viva-bulb 1.4s steps(2, end) infinite;
+  animation: viva-bulb 2.6s ease-in-out infinite;
 }
 
-/* ticker tape — endless horizontal crawl */
-@keyframes sig-ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.sig-ticker {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: sig-ticker 28s linear infinite;
-}
-
-.sig-ticker-item {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  opacity: 0.75;
-  padding-right: 48px;
+/* gentle shimmer line (splash) */
+@keyframes silk-line {
+  0% { transform: scaleX(0); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: scaleX(1); opacity: 1; }
 }
 
 /* custom scrollbar */
@@ -203,13 +153,13 @@ body::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsla(213, 13%, 26%, 0.9);
-  border-radius: 0;
-  border: 2px solid hsla(220, 15%, 5%, 1);
+  background: hsla(240, 8%, 26%, 0.9);
+  border-radius: 8px;
+  border: 2px solid hsla(240, 9%, 6%, 1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsla(189, 80%, 50%, 0.9);
+  background: hsla(245, 50%, 52%, 0.9);
 }
 
 /* ------------------------------------------------------------- */
@@ -267,7 +217,7 @@ https://toughengineer.github.io/demo/slider-styler*/
 :root {
   --slider-height: 0.25rem;
   --slider-border-radius: 1em;
-  --slider-progress-background: hsla(189, 92%, 64%, 1);
+  --slider-progress-background: hsla(245, 84%, 70%, 1);
 }
 
 input[type="range"].styled-slider {

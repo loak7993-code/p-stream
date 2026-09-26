@@ -14,25 +14,20 @@ export function BrandPill(props: {
   return (
     <div
       className={classNames(
-        "flex items-center gap-3 rounded-none border border-type-divider bg-background-secondary/60 px-4 py-2 text-type-logo backdrop-blur-md",
+        "flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.04] px-4 py-2 text-type-logo backdrop-blur-xl",
         props.backgroundClass,
         props.clickable
-          ? "transition-[transform,box-shadow] hover:-translate-y-px hover:border-buttons-toggle hover:shadow-[3px_3px_0_0_hsla(290,82%,64%,0.6)] active:translate-y-0 active:shadow-none"
+          ? "transition-[transform,box-shadow,border-color] duration-300 hover:border-iris-200/30 hover:shadow-[0_8px_32px_-12px_hsla(245,70%,55%,0.45)] active:scale-[0.98]"
           : "",
       )}
     >
-      <span className="flex items-center gap-2">
-        <span
-          className="viva-bulb inline-block h-2 w-2 rounded-none"
-          style={{ background: "hsla(0, 84%, 64%, 1)" }}
-        />
-        <span className="font-display text-base font-black tracking-tight text-white">
-          Stream<span className="viva-gradient-text">Viva</span>
-        </span>
+      <span className="font-display text-[19px] leading-none tracking-tight text-white">
+        Stream<em className="viva-gradient-text not-italic">Viva</em>
       </span>
-      <span className="font-mono-label hidden text-type-secondary sm:inline">
-        SIG/01
-      </span>
+      <span
+        className="viva-bulb ml-0.5 inline-block h-1 w-1 rounded-full"
+        style={{ background: "hsla(245, 84%, 70%, 1)" }}
+      />
       <span
         className={[
           "sr-only",
