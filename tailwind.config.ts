@@ -20,7 +20,8 @@ const config: Config = {
 
       /* fonts */
       fontFamily: {
-        main: "'DM Sans'", // "main": "'Open Sans'",
+        main: "'Outfit', system-ui, sans-serif",
+        display: "'Fraunces', Georgia, serif",
       },
 
       /* animations */

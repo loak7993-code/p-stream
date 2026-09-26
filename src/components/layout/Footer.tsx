@@ -80,12 +80,11 @@ export function Footer() {
               {t("footer.links.github")}
             </FooterLink>
           )}
-          <FooterLink icon={Icons.DISCORD} href={conf().DISCORD_LINK}>
-            {t("footer.links.discord")}
-          </FooterLink>
-          <FooterLink href="https://rentry.co/nnqtas3e" icon={Icons.TIP_JAR}>
-            {t("footer.links.funding")}
-          </FooterLink>
+          {conf().DISCORD_LINK && (
+            <FooterLink icon={Icons.DISCORD} href={conf().DISCORD_LINK}>
+              {t("footer.links.discord")}
+            </FooterLink>
+          )}
           <div className="inline md:hidden">
             <Legal />
           </div>
@@ -94,6 +93,25 @@ export function Footer() {
           <Legal />
         </div>
       </WideContainer>
+      <div className="mt-10 flex items-center justify-center gap-3 opacity-40 transition-opacity duration-300 hover:opacity-80">
+        <span className="h-px w-10 bg-type-divider" />
+        <span className="font-display text-xs italic tracking-widest text-type-secondary">
+          viva la
+        </span>
+        <span className="font-display text-xs tracking-widest text-type-logo">
+          StreamViva
+        </span>
+        <span className="h-px w-10 bg-type-divider" />
+        <a
+          href="https://deerflow.tech"
+          target="_blank"
+          rel="noreferrer"
+          className="text-[10px] tracking-wider text-type-secondary transition-colors hover:text-type-logo"
+          title="Created By Deerflow"
+        >
+          ✦ Deerflow
+        </a>
+      </div>
     </footer>
   );
 }

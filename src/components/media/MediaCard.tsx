@@ -176,8 +176,10 @@ function MediaCardContent({
   return (
     <div ref={targetRef as React.RefObject<HTMLDivElement>}>
       <Flare.Base
-        className={`group -m-[0.705em] rounded-xl bg-background-main transition-colors duration-300 focus:relative focus:z-10 ${
-          canLink ? "hover:bg-mediaCard-hoverBackground tabbable" : ""
+        className={`group -m-[0.705em] rounded-xl bg-background-main transition-all duration-300 focus:relative focus:z-10 ${
+          canLink
+            ? "hover:bg-mediaCard-hoverBackground hover:shadow-[0_0_0_1px_hsla(38,96%,68%,0.28),0_14px_44px_-14px_hsla(8,60%,45%,0.5)] hover:-translate-y-0.5 tabbable"
+            : ""
         } ${closable ? "jiggle" : ""}`}
         tabIndex={canLink ? 0 : -1}
         onKeyUp={(e) => e.key === "Enter" && e.currentTarget.click()}

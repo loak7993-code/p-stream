@@ -36,7 +36,7 @@
     />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#120f1d" />
     <meta name="msapplication-TileColor" content="#120f1d" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#120d0a" />
 
     <meta name="mobile-web-app-capable" content="yes" />
     <meta
@@ -270,7 +270,135 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- StreamViva splash — sunset marquee -->
+    <style>
+      #viva-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        background: radial-gradient(
+            ellipse 90% 65% at 50% -10%,
+            hsla(28, 60%, 14%, 0.9) 0%,
+            transparent 60%
+          ),
+          hsla(8, 9%, 5%, 1);
+        font-family: "Fraunces", Georgia, serif;
+        transition: opacity 0.6s ease, visibility 0.6s ease;
+      }
+      #viva-splash.done {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .viva-splash-mark {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+      }
+      .viva-splash-word {
+        font-size: clamp(44px, 9vw, 88px);
+        font-weight: 640;
+        letter-spacing: -0.02em;
+        background: linear-gradient(
+          100deg,
+          hsla(46, 100%, 82%, 1) 0%,
+          hsla(36, 96%, 68%, 1) 45%,
+          hsla(8, 84%, 64%, 1) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .viva-splash-bulb {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: hsla(38, 96%, 68%, 1);
+        animation: vivaSplashBulb 1.6s ease-in-out infinite;
+      }
+      .viva-splash-bulb:nth-child(2) { animation-delay: 0.2s; }
+      .viva-splash-bulb:nth-child(3) { animation-delay: 0.4s; }
+      @keyframes vivaSplashBulb {
+        0%, 100% { opacity: 1; box-shadow: 0 0 14px 3px hsla(38, 96%, 60%, 0.75); }
+        50% { opacity: 0.4; box-shadow: 0 0 5px 1px hsla(38, 96%, 60%, 0.3); }
+      }
+      .viva-splash-sub {
+        font-family: "Outfit", system-ui, sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.42em;
+        text-transform: uppercase;
+        color: hsla(30, 14%, 62%, 1);
+        animation: vivaSplashPulse 2.4s ease-in-out infinite;
+      }
+      @keyframes vivaSplashPulse {
+        0%, 100% { opacity: 0.55; }
+        50% { opacity: 1; }
+      }
+      .viva-splash-bar {
+        width: 148px;
+        height: 2px;
+        border-radius: 2px;
+        background: hsla(22, 12%, 26%, 1);
+        overflow: hidden;
+      }
+      .viva-splash-bar::after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 40%;
+        border-radius: 2px;
+        background: linear-gradient(
+          90deg,
+          hsla(36, 96%, 68%, 1),
+          hsla(8, 84%, 64%, 1)
+        );
+        animation: vivaSplashSlide 1.2s ease-in-out infinite;
+      }
+      @keyframes vivaSplashSlide {
+        0% { transform: translateX(-120%); }
+        100% { transform: translateX(360%); }
+      }
+    </style>
+    <div id="viva-splash" aria-hidden="true">
+      <div class="viva-splash-mark">
+        <span class="viva-splash-word">StreamViva</span>
+        <span style="display:flex; gap:6px; align-self:center;">
+          <span class="viva-splash-bulb"></span>
+          <span class="viva-splash-bulb"></span>
+          <span class="viva-splash-bulb"></span>
+        </span>
+      </div>
+      <div class="viva-splash-bar"></div>
+      <div class="viva-splash-sub">Now Showing</div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
+    <script>
+      // hide splash once the app has rendered
+      (function () {
+        var hide = function () {
+          var s = document.getElementById("viva-splash");
+          if (s) {
+            s.classList.add("done");
+            setTimeout(function () { s.remove(); }, 700);
+          }
+        };
+        var root = document.getElementById("root");
+        if (root && root.childElementCount > 0) return hide();
+        var t = setInterval(function () {
+          if (root && root.childElementCount > 0) {
+            clearInterval(t);
+            hide();
+          }
+        }, 80);
+        setTimeout(function () { clearInterval(t); hide(); }, 12000);
+      })();
+    </script>
   </body>
 </html>

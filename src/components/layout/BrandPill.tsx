@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 
-import { Icon, Icons } from "@/components/Icon";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 export function BrandPill(props: {
@@ -15,17 +14,31 @@ export function BrandPill(props: {
   return (
     <div
       className={classNames(
-        "flex items-center space-x-2 rounded-full px-4 py-2 text-type-logo backdrop-blur-lg",
+        "group flex items-center gap-2.5 rounded-full px-4 py-2 text-type-logo backdrop-blur-lg",
         props.backgroundClass ?? "bg-pill-background bg-opacity-50",
         props.clickable
-          ? "transition-[transform,background-color] hover:scale-105 hover:bg-pill-backgroundHover hover:text-type-logo active:scale-95"
+          ? "transition-[transform,box-shadow] hover:scale-105 hover:shadow-[0_0_0_1px_hsla(38,96%,68%,0.35),0_4px_28px_-8px_hsla(36,96%,58%,0.55)] active:scale-95"
           : "",
       )}
     >
-      <Icon className="text-2xl" icon={Icons.LOGO} />
+      <span className="font-display text-lg font-semibold tracking-tight text-white">
+        Stream
+        <span className="viva-gradient-text">Viva</span>
+      </span>
+      <span className="flex items-center gap-1" aria-hidden="true">
+        <span className="viva-bulb inline-block h-1.5 w-1.5 rounded-full bg-[hsla(38,96%,68%,1)]" />
+        <span
+          className="viva-bulb inline-block h-1.5 w-1.5 rounded-full bg-[hsla(36,96%,68%,1)]"
+          style={{ animationDelay: "0.25s" }}
+        />
+        <span
+          className="viva-bulb inline-block h-1.5 w-1.5 rounded-full bg-[hsla(8,84%,64%,1)]"
+          style={{ animationDelay: "0.5s" }}
+        />
+      </span>
       <span
         className={[
-          "font-semibold text-white",
+          "sr-only",
           isMobile && props.header ? "hidden sm:block" : "",
         ].join(" ")}
       >

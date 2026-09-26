@@ -82,8 +82,31 @@ export function HeroPart({
         )}
       >
         {showTitle && (!isTV || search.length === 0) ? (
-          <div className="relative z-10 mb-16">
-            <HeroTitle className="mx-auto max-w-md">{title}</HeroTitle>
+          <div className="relative z-10 mb-16 viva-rise viva-rise-1">
+            <HeroTitle className="mx-auto max-w-xl">{title}</HeroTitle>
+            <div className="mx-auto mt-5 flex items-center justify-center gap-2.5">
+              <span
+                className="viva-bulb inline-block h-1.5 w-1.5 rounded-full"
+                style={{ background: "hsla(38,96%,68%,1)" }}
+              />
+              <span
+                className="viva-bulb inline-block h-1.5 w-1.5 rounded-full"
+                style={{
+                  background: "hsla(36,96%,68%,1)",
+                  animationDelay: "0.25s",
+                }}
+              />
+              <span
+                className="viva-bulb inline-block h-1.5 w-1.5 rounded-full"
+                style={{
+                  background: "hsla(8,84%,64%,1)",
+                  animationDelay: "0.5s",
+                }}
+              />
+              <span className="ml-2 font-display text-sm italic tracking-wide text-type-secondary opacity-80">
+                Viva la StreamViva
+              </span>
+            </div>
           </div>
         ) : null}
 

@@ -1,3 +1,4 @@
+import viva from "./list/viva";
 import teal from "./list/teal";
 import blue from "./list/blue";
 import red from "./list/red";
@@ -22,6 +23,7 @@ import frost from "./list/frost";
 import christmas from "./list/christmas";
 
 export const allThemes = [
+  viva,
   teal,
   blue,
   gray,

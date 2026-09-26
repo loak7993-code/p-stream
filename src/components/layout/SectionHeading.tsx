@@ -14,7 +14,7 @@ export function SectionHeading(props: SectionHeadingProps) {
   return (
     <div className={props.className}>
       <div className="mb-5 flex items-center">
-        <p className="flex flex-1 items-center font-bold uppercase text-type-text z-[19]">
+        <p className="flex flex-1 items-center font-display font-semibold uppercase tracking-[0.14em] text-type-text z-[19]">
           {props.customIcon ? (
             <span className="mr-2 text-xl flex items-center justify-center">
               {props.customIcon}
@@ -24,7 +24,7 @@ export function SectionHeading(props: SectionHeadingProps) {
               <Icon icon={props.icon} />
             </span>
           ) : null}
-          {props.title}
+          <span className="viva-gradient-text">{props.title}</span>
         </p>
         {props.children}
       </div>
