@@ -20,8 +20,9 @@ const config: Config = {
 
       /* fonts */
       fontFamily: {
-        main: "'Outfit', system-ui, sans-serif",
-        display: "'Fraunces', Georgia, serif",
+        main: "'Archivo', system-ui, sans-serif",
+        display: "'Archivo', system-ui, sans-serif",
+        mono: "'IBM Plex Mono', monospace",
       },
 
       /* animations */

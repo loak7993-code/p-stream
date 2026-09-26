@@ -93,24 +93,43 @@ export function Footer() {
           <Legal />
         </div>
       </WideContainer>
-      <div className="mt-10 flex items-center justify-center gap-3 opacity-40 transition-opacity duration-300 hover:opacity-80">
-        <span className="h-px w-10 bg-type-divider" />
-        <span className="font-display text-xs italic tracking-widest text-type-secondary">
-          viva la
-        </span>
-        <span className="font-display text-xs tracking-widest text-type-logo">
-          StreamViva
-        </span>
-        <span className="h-px w-10 bg-type-divider" />
-        <a
-          href="https://deerflow.tech"
-          target="_blank"
-          rel="noreferrer"
-          className="text-[10px] tracking-wider text-type-secondary transition-colors hover:text-type-logo"
-          title="Created By Deerflow"
-        >
-          ✦ Deerflow
-        </a>
+      <div className="mt-10 border-t border-type-divider pt-5">
+        <div className="overflow-hidden" aria-hidden="true">
+          <div className="sig-ticker">
+            <span className="sig-ticker-item">streamviva</span>
+            <span className="sig-ticker-item">viva la streamviva</span>
+            <span className="sig-ticker-item">35 sources online</span>
+            <span className="sig-ticker-item">movies · tv · anime</span>
+            <span className="sig-ticker-item">signal: live</span>
+            <span className="sig-ticker-item">streamviva</span>
+            <span className="sig-ticker-item">viva la streamviva</span>
+            <span className="sig-ticker-item">35 sources online</span>
+            <span className="sig-ticker-item">movies · tv · anime</span>
+            <span className="sig-ticker-item">signal: live</span>
+          </div>
+        </div>
+        <div className="mt-4 flex items-center justify-center gap-3 opacity-50 transition-opacity duration-300 hover:opacity-90">
+          <span
+            className="h-px w-10"
+            style={{ background: "hsla(189,92%,64%,0.5)" }}
+          />
+          <span className="font-mono-label text-type-secondary">
+            end of transmission
+          </span>
+          <span
+            className="h-px w-10"
+            style={{ background: "hsla(189,92%,64%,0.5)" }}
+          />
+          <a
+            href="https://deerflow.tech"
+            target="_blank"
+            rel="noreferrer"
+            className="text-[10px] tracking-wider text-type-secondary transition-colors hover:text-type-logo"
+            title="Created By Deerflow"
+          >
+            ✦ DF
+          </a>
+        </div>
       </div>
     </footer>
   );

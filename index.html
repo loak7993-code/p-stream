@@ -36,7 +36,7 @@
     />
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#120f1d" />
     <meta name="msapplication-TileColor" content="#120f1d" />
-    <meta name="theme-color" content="#120d0a" />
+    <meta name="theme-color" content="#05070c" />
 
     <meta name="mobile-web-app-capable" content="yes" />
     <meta
@@ -271,7 +271,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <!-- StreamViva splash — sunset marquee -->
+    <!-- StreamViva splash — midnight signal boot -->
     <style>
       #viva-splash {
         position: fixed;
@@ -279,102 +279,106 @@
         z-index: 99999;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        gap: 28px;
-        background: radial-gradient(
-            ellipse 90% 65% at 50% -10%,
-            hsla(28, 60%, 14%, 0.9) 0%,
-            transparent 60%
-          ),
-          hsla(8, 9%, 5%, 1);
-        font-family: "Fraunces", Georgia, serif;
-        transition: opacity 0.6s ease, visibility 0.6s ease;
+        gap: 26px;
+        padding: 0 min(14vw, 180px);
+        background:
+          radial-gradient(ellipse 80% 50% at 50% 0%, hsla(210, 60%, 12%, 0.55) 0%, transparent 60%),
+          hsla(220, 15%, 5%, 1);
+        font-family: "IBM Plex Mono", monospace;
+        transition: opacity 0.45s steps(6, end), visibility 0.45s;
       }
       #viva-splash.done {
         opacity: 0;
         visibility: hidden;
       }
-      .viva-splash-mark {
+      .sig-boot-row {
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: hsla(190, 60%, 64%, 0.85);
         display: flex;
-        align-items: baseline;
-        gap: 14px;
+        align-items: center;
+        gap: 12px;
       }
-      .viva-splash-word {
-        font-size: clamp(44px, 9vw, 88px);
-        font-weight: 640;
-        letter-spacing: -0.02em;
-        background: linear-gradient(
-          100deg,
-          hsla(46, 100%, 82%, 1) 0%,
-          hsla(36, 96%, 68%, 1) 45%,
-          hsla(8, 84%, 64%, 1) 100%
-        );
+      .sig-boot-row .dim { color: hsla(213, 14%, 44%, 1); }
+      .sig-boot-mark {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-weight: 900;
+        font-stretch: 115%;
+        font-size: clamp(46px, 10vw, 104px);
+        line-height: 0.94;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: hsla(210, 40%, 98%, 1);
+      }
+      .sig-boot-mark .cy {
+        background: linear-gradient(96deg, hsla(190, 100%, 78%, 1) 0%, hsla(189, 92%, 64%, 1) 55%, hsla(290, 82%, 66%, 1) 130%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-      .viva-splash-bulb {
-        width: 9px;
-        height: 9px;
-        border-radius: 999px;
-        background: hsla(38, 96%, 68%, 1);
-        animation: vivaSplashBulb 1.6s ease-in-out infinite;
+      .sig-onair {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid hsla(0, 84%, 64%, 0.6);
+        padding: 7px 14px;
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        color: hsla(0, 92%, 72%, 1);
       }
-      .viva-splash-bulb:nth-child(2) { animation-delay: 0.2s; }
-      .viva-splash-bulb:nth-child(3) { animation-delay: 0.4s; }
-      @keyframes vivaSplashBulb {
-        0%, 100% { opacity: 1; box-shadow: 0 0 14px 3px hsla(38, 96%, 60%, 0.75); }
-        50% { opacity: 0.4; box-shadow: 0 0 5px 1px hsla(38, 96%, 60%, 0.3); }
+      .sig-onair-dot {
+        width: 8px;
+        height: 8px;
+        background: hsla(0, 84%, 64%, 1);
+        animation: sigBlink 1.2s steps(2, end) infinite;
       }
-      .viva-splash-sub {
-        font-family: "Outfit", system-ui, sans-serif;
-        font-size: 13px;
-        letter-spacing: 0.42em;
-        text-transform: uppercase;
-        color: hsla(30, 14%, 62%, 1);
-        animation: vivaSplashPulse 2.4s ease-in-out infinite;
+      @keyframes sigBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.15; }
       }
-      @keyframes vivaSplashPulse {
-        0%, 100% { opacity: 0.55; }
-        50% { opacity: 1; }
+      .sig-bars {
+        display: flex;
+        gap: 4px;
+        height: 22px;
+        align-items: flex-end;
       }
-      .viva-splash-bar {
-        width: 148px;
-        height: 2px;
-        border-radius: 2px;
-        background: hsla(22, 12%, 26%, 1);
-        overflow: hidden;
+      .sig-bars span {
+        width: 5px;
+        background: hsla(189, 92%, 64%, 1);
+        animation: sigBar 1s steps(4, end) infinite;
       }
-      .viva-splash-bar::after {
-        content: "";
-        display: block;
-        height: 100%;
-        width: 40%;
-        border-radius: 2px;
-        background: linear-gradient(
-          90deg,
-          hsla(36, 96%, 68%, 1),
-          hsla(8, 84%, 64%, 1)
-        );
-        animation: vivaSplashSlide 1.2s ease-in-out infinite;
+      .sig-bars span:nth-child(1) { height: 30%; animation-delay: 0s; }
+      .sig-bars span:nth-child(2) { height: 60%; animation-delay: 0.12s; }
+      .sig-bars span:nth-child(3) { height: 100%; animation-delay: 0.24s; }
+      .sig-bars span:nth-child(4) { height: 55%; animation-delay: 0.36s; }
+      .sig-bars span:nth-child(5) { height: 80%; animation-delay: 0.48s; }
+      @keyframes sigBar {
+        0%, 100% { transform: scaleY(0.35); }
+        50% { transform: scaleY(1); }
       }
-      @keyframes vivaSplashSlide {
-        0% { transform: translateX(-120%); }
-        100% { transform: translateX(360%); }
+      .sig-boot-lines > div {
+        opacity: 0;
+        animation: sigLine 0.3s steps(3, end) forwards;
+      }
+      .sig-boot-lines > div:nth-child(1) { animation-delay: 0.05s; }
+      .sig-boot-lines > div:nth-child(2) { animation-delay: 0.25s; }
+      .sig-boot-lines > div:nth-child(3) { animation-delay: 0.45s; }
+      @keyframes sigLine {
+        to { opacity: 1; }
       }
     </style>
     <div id="viva-splash" aria-hidden="true">
-      <div class="viva-splash-mark">
-        <span class="viva-splash-word">StreamViva</span>
-        <span style="display:flex; gap:6px; align-self:center;">
-          <span class="viva-splash-bulb"></span>
-          <span class="viva-splash-bulb"></span>
-          <span class="viva-splash-bulb"></span>
-        </span>
+      <div class="sig-boot-mark">Stream<span class="cy">Viva</span></div>
+      <div class="sig-onair"><span class="sig-onair-dot"></span>ON AIR</div>
+      <div class="sig-bars"><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="sig-boot-lines">
+        <div class="sig-boot-row">> acquiring signal <span class="dim">............</span> OK</div>
+        <div class="sig-boot-row">> mounting sources <span class="dim">..........</span> 35</div>
+        <div class="sig-boot-row">> transmission <span class="dim">..................</span> LIVE</div>
       </div>
-      <div class="viva-splash-bar"></div>
-      <div class="viva-splash-sub">Now Showing</div>
     </div>
 
     <div id="root"></div>

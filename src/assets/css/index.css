@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html,
 body {
-  font-family: "Outfit", sans-serif !important;
+  font-family: "Archivo", system-ui, sans-serif !important;
   @apply bg-background-main !important;
   @apply font-main text-type-text;
   min-height: 100vh;
@@ -43,54 +43,75 @@ html[data-no-scroll] body {
 /* ---------- StreamViva: Sunset Marquee design system ---------- */
 
 :root {
-  --viva-gold: hsla(38, 98%, 78%, 1);
-  --viva-amber: hsla(36, 96%, 68%, 1);
-  --viva-ember: hsla(8, 84%, 64%, 1);
-  --viva-ink: hsla(9, 10%, 5%, 1);
+  --sig-cyan: hsla(189, 92%, 64%, 1);
+  --sig-cyan-bright: hsla(190, 100%, 74%, 1);
+  --sig-magenta: hsla(290, 82%, 64%, 1);
+  --sig-red: hsla(0, 84%, 64%, 1);
+  --sig-void: hsla(220, 15%, 5%, 1);
 }
 
 ::selection {
-  background: hsla(38, 96%, 60%, 0.35);
-  color: hsla(36, 100%, 96%, 1);
+  background: hsla(189, 92%, 55%, 0.4);
+  color: hsla(190, 100%, 96%, 1);
 }
 
-/* film grain overlay — the texture of cinema */
+/* scanline overlay — the texture of a late-night transmission */
 body::after {
   content: "";
   position: fixed;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.032;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: viva-grain 8s steps(10) infinite;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    hsla(190, 90%, 60%, 0.014) 3px,
+    hsla(190, 90%, 60%, 0.014) 4px
+  );
+  mix-blend-mode: screen;
 }
 
-@keyframes viva-grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -8%); }
-  30% { transform: translate(4%, 6%); }
-  50% { transform: translate(-6%, 4%); }
-  70% { transform: translate(6%, -5%); }
-  90% { transform: translate(-3%, 7%); }
+/* faint broadcast grid on the far background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(hsla(190, 80%, 60%, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(190, 80%, 60%, 0.03) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 0%, transparent 75%);
 }
 
-/* display type — the marquee voice */
+/* display type — the broadcast voice: heavy, wide, cold */
 .font-display {
-  font-family: "Fraunces", serif !important;
-  font-variation-settings: "opsz" 144;
-  letter-spacing: -0.015em;
+  font-family: "Archivo", system-ui, sans-serif !important;
+  font-variation-settings: "wdth" 115;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
-/* sunset gradient text */
+/* mono microcopy — signal labels, tickers, metadata */
+.font-mono-label {
+  font-family: "IBM Plex Mono", monospace !important;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72em;
+  font-weight: 500;
+}
+
+/* signal gradient text: cyan into magenta interference */
 .viva-gradient-text {
   background: linear-gradient(
-    100deg,
-    hsla(46, 100%, 82%, 1) 0%,
-    hsla(36, 96%, 68%, 1) 42%,
-    hsla(8, 84%, 64%, 1) 100%
+    96deg,
+    hsla(190, 100%, 78%, 1) 0%,
+    hsla(189, 92%, 64%, 1) 55%,
+    hsla(290, 82%, 66%, 1) 130%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -98,40 +119,41 @@ body::after {
   color: transparent;
 }
 
-/* marquee glow — soft gold aura for interactive elements */
+/* signal edge — hard cyan ring, no soft glow */
 .viva-glow {
-  box-shadow:
-    0 0 0 1px hsla(38, 96%, 68%, 0.22),
-    0 4px 28px -6px hsla(36, 96%, 60%, 0.45);
+  box-shadow: 0 0 0 1px hsla(189, 92%, 64%, 0.4);
 }
 
 .viva-glow-hover {
-  transition: box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: box-shadow 0.18s steps(3, end), transform 0.18s steps(3, end);
 }
 
 .viva-glow-hover:hover {
   box-shadow:
-    0 0 0 1px hsla(38, 96%, 68%, 0.45),
-    0 8px 42px -8px hsla(36, 96%, 58%, 0.6);
+    0 0 0 1px hsla(189, 92%, 64%, 0.9),
+    4px 4px 0 0 hsla(290, 82%, 64%, 0.55);
 }
 
-/* staggered entrance reveals */
+/* staggered entrance — hard cut with signal sweep */
 @keyframes viva-rise {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(18px) scale(0.985);
-    filter: blur(4px);
+    transform: translateY(10px);
+    clip-path: inset(0 100% 0 0);
   }
-  to {
+  60% {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
   }
 }
 
 .viva-rise {
-  animation: viva-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: viva-rise 0.5s steps(8, end) both;
 }
 
 .viva-rise-1 { animation-delay: 0.05s; }
@@ -139,36 +161,35 @@ body::after {
 .viva-rise-3 { animation-delay: 0.23s; }
 .viva-rise-4 { animation-delay: 0.32s; }
 
-/* marquee shimmer sweep — for the brand and hero */
-@keyframes viva-sweep {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
-.viva-shimmer {
-  background: linear-gradient(
-    100deg,
-    hsla(38, 98%, 78%, 1) 0%,
-    hsla(48, 100%, 88%, 1) 20%,
-    hsla(38, 98%, 78%, 1) 40%,
-    hsla(8, 84%, 64%, 1) 70%,
-    hsla(38, 98%, 78%, 1) 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: viva-sweep 6s linear infinite;
-}
-
-/* pulsing marquee bulb */
+/* ON AIR blinker */
 @keyframes viva-bulb {
-  0%, 100% { opacity: 1; box-shadow: 0 0 12px 2px hsla(38, 96%, 60%, 0.8); }
-  50% { opacity: 0.55; box-shadow: 0 0 5px 1px hsla(38, 96%, 60%, 0.4); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
 }
 
 .viva-bulb {
-  animation: viva-bulb 1.8s ease-in-out infinite;
+  animation: viva-bulb 1.4s steps(2, end) infinite;
+}
+
+/* ticker tape — endless horizontal crawl */
+@keyframes sig-ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.sig-ticker {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: sig-ticker 28s linear infinite;
+}
+
+.sig-ticker-item {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  padding-right: 48px;
 }
 
 /* custom scrollbar */
@@ -182,13 +203,13 @@ body::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsla(24, 12%, 26%, 0.8);
-  border-radius: 8px;
-  border: 2px solid hsla(9, 10%, 5%, 1);
+  background: hsla(213, 13%, 26%, 0.9);
+  border-radius: 0;
+  border: 2px solid hsla(220, 15%, 5%, 1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsla(36, 60%, 45%, 0.9);
+  background: hsla(189, 80%, 50%, 0.9);
 }
 
 /* ------------------------------------------------------------- */
@@ -246,7 +267,7 @@ https://toughengineer.github.io/demo/slider-styler*/
 :root {
   --slider-height: 0.25rem;
   --slider-border-radius: 1em;
-  --slider-progress-background: hsla(36, 96%, 68%, 1);
+  --slider-progress-background: hsla(189, 92%, 64%, 1);
 }
 
 input[type="range"].styled-slider {

@@ -10,11 +10,37 @@ interface SectionHeadingProps {
   customIcon?: ReactNode;
 }
 
+let sectionCounter = 0;
+const channelNumbers = [
+  "CH 01",
+  "CH 02",
+  "CH 03",
+  "CH 04",
+  "CH 05",
+  "CH 06",
+  "CH 07",
+  "CH 08",
+  "CH 09",
+  "CH 10",
+  "CH 11",
+  "CH 12",
+];
+
 export function SectionHeading(props: SectionHeadingProps) {
+  const channel = channelNumbers[sectionCounter % channelNumbers.length];
+  sectionCounter += 1;
+
   return (
     <div className={props.className}>
-      <div className="mb-5 flex items-center">
-        <p className="flex flex-1 items-center font-display font-semibold uppercase tracking-[0.14em] text-type-text z-[19]">
+      <div className="mb-5 flex items-center gap-4">
+        <span className="font-mono-label shrink-0 text-buttons-toggle">
+          {channel}
+        </span>
+        <span
+          className="h-px w-6 shrink-0"
+          style={{ background: "hsla(189, 92%, 64%, 0.5)" }}
+        />
+        <p className="flex flex-1 items-center font-display font-extrabold uppercase tracking-wide text-type-text z-[19]">
           {props.customIcon ? (
             <span className="mr-2 text-xl flex items-center justify-center">
               {props.customIcon}
@@ -24,7 +50,7 @@ export function SectionHeading(props: SectionHeadingProps) {
               <Icon icon={props.icon} />
             </span>
           ) : null}
-          <span className="viva-gradient-text">{props.title}</span>
+          {props.title}
         </p>
         {props.children}
       </div>

@@ -34,11 +34,11 @@ const isHalloween =
 export const useThemeStore = create(
   persist(
     immer<ThemeStore>((set) => ({
-      theme: is420 ? "green" : isHalloween ? "autumn" : "viva",
+      theme: is420 ? "green" : isHalloween ? "autumn" : "signal",
       customTheme: {
-        primary: "viva",
-        secondary: "viva",
-        tertiary: "viva",
+        primary: "signal",
+        secondary: "signal",
+        tertiary: "signal",
       },
       setTheme(v) {
         set((s) => {

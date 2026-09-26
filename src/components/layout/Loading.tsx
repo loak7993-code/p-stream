@@ -8,10 +8,10 @@ export function Loading(props: LoadingProps) {
     <div className={props.className}>
       <div className="flex flex-col items-center justify-center">
         <div className="flex h-12 items-center justify-center">
-          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(36,96%,68%,0.35)]" />
-          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(36,96%,68%,0.6)] [animation-delay:150ms]" />
-          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(38,96%,68%,1)] [animation-delay:300ms]" />
-          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(8,84%,64%,1)] [animation-delay:450ms]" />
+          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(189,92%,64%,0.3)]" />
+          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(189,92%,64%,0.6)] [animation-delay:150ms]" />
+          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(190,100%,74%,1)] [animation-delay:300ms]" />
+          <div className="mx-1 h-2 w-2 animate-loading-pin rounded-full bg-[hsla(290,82%,64%,1)] [animation-delay:450ms]" />
         </div>
         {props.text && props.text.length ? (
           <p className="mt-3 max-w-xs text-sm opacity-75">{props.text}</p>
