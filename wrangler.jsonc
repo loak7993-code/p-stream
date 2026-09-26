@@ -5,10 +5,18 @@
   "compatibility_date": "2026-09-20",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/config.js", "/proxy", "/m3u8-proxy"]
+    "run_worker_first": true
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "streamviva_accounts",
+      "database_id": "33646c01-1f5b-41cb-9098-c0e0bd94578b"
+    }
+  ]
 }

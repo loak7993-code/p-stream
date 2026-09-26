@@ -32,6 +32,8 @@ const CORS_HEADERS = {
   "access-control-expose-headers": "*",
 };
 
+import { handleAccounts } from "./accounts-backend.js";
+
 function cors(response) {
   const r = new Response(response.body, response);
   for (const [k, v] of Object.entries(CORS_HEADERS)) r.headers.set(k, v);
@@ -48,7 +50,7 @@ function serveConfig(origin) {
   VITE_APP_DOMAIN: ${JSON.stringify(origin)},
   VITE_NORMAL_ROUTER: true,
   VITE_OPENSEARCH_ENABLED: false,
-  VITE_BACKEND_URL: null,
+  VITE_BACKEND_URL: ${JSON.stringify(origin)},
   VITE_DMCA_EMAIL: null,
   VITE_DISALLOWED_IDS: "",
 };
@@ -235,6 +237,16 @@ async function handleM3U8Proxy(request, url, origin) {
   return cors(new Response(resp.body, { status: resp.status, headers: rh }));
 }
 
+/* ---------------------------- accounts api ---------------------------- */
+
+const ACCOUNTS_PREFIXES = ["/auth", "/users", "/sessions", "/meta"];
+
+async function handleAccountsRoute(request, path) {
+  if (!env.DB) return new Response(JSON.stringify({ error: "accounts disabled" }), { status: 503, headers: JSON_HEADERS });
+  const { handleAccounts } = await import("./accounts-backend.js");
+  return handleAccounts(request, path, env.DB);
+}
+
 /* -------------------------------- router -------------------------------- */
 
 export default {
@@ -244,10 +256,32 @@ export default {
 
     if (request.method === "OPTIONS") return cors(new Response(null, { status: 204 }));
 
-    // hotlink protection: only our own origin may use the proxy endpoints
+    // accounts API (same origin — no CORS needed, but harmless)
+    if (
+      url.pathname.startsWith("/auth/") ||
+      url.pathname.startsWith("/users/") ||
+      url.pathname.startsWith("/sessions/") ||
+      url.pathname === "/meta"
+    ) {
+      if (!env.DB)
+        return new Response(JSON.stringify({ error: "accounts disabled: no database" }), {
+          status: 503,
+          headers: { "content-type": "application/json" },
+        });
+      return handleAccounts(request, url.pathname, env.DB);
+    }
+
+    // hotlink protection: our own origin + the Android app WebView origins
     const referer = request.headers.get("referer") || "";
+    const allowedOrigins = [
+      origin,
+      "https://localhost",
+      "http://localhost",
+      "ionic://localhost",
+      "capacitor://localhost",
+    ];
     const isProxyPath = url.pathname === "/proxy" || url.pathname === "/m3u8-proxy";
-    if (isProxyPath && referer && !referer.startsWith(origin)) {
+    if (isProxyPath && referer && !allowedOrigins.some((o) => referer.startsWith(o))) {
       return new Response("forbidden", { status: 403 });
     }
 
@@ -259,9 +293,17 @@ export default {
     // everything else -> static assets (with SPA fallback)
     if (env.ASSETS) {
       const assetResp = await env.ASSETS.fetch(request);
-      if (assetResp.status !== 404 || request.method !== "GET") return assetResp;
-      // SPA fallback for client-side routes
-      return env.ASSETS.fetch(new URL("/index.html", origin).toString());
+      if (assetResp.status !== 404) return assetResp;
+      if (request.method === "GET") {
+        // SPA fallback for client-side routes
+        const spaReq = new Request(new URL("/index.html", origin), {
+          method: "GET",
+          headers: { accept: "text/html" },
+        });
+        const spaResp = await env.ASSETS.fetch(spaReq);
+        if (spaResp.status !== 404) return spaResp;
+      }
+      return assetResp;
     }
 
     return new Response("not found", { status: 404 });
