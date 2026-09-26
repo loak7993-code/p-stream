@@ -14,7 +14,7 @@ export function BrandPill(props: {
   return (
     <div
       className={classNames(
-        "flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.04] px-4 py-2 text-type-logo backdrop-blur-xl",
+        "flex items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.04] px-4 py-2 text-type-logo",
         props.backgroundClass,
         props.clickable
           ? "transition-[transform,box-shadow,border-color] duration-300 hover:border-iris-200/30 hover:shadow-[0_8px_32px_-12px_hsla(245,70%,55%,0.45)] active:scale-[0.98]"

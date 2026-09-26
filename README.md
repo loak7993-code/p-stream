@@ -5,6 +5,10 @@
 [![Build](https://github.com/loak7993-code/streamviva/actions/workflows/linting_testing.yml/badge.svg?branch=production)](https://github.com/loak7993-code/streamviva/actions)
 [![Deploy](https://github.com/loak7993-code/streamviva/actions/workflows/deploying.yml/badge.svg?branch=production)](https://github.com/loak7993-code/streamviva/actions)
 
+**📱 Android app (native):** &nbsp;[![Download APK](https://img.shields.io/badge/Download-StreamViva.apk-8D6BE0?style=for-the-badge&logo=android&logoColor=white)](https://streamviva.satisfying-discovery.workers.dev/streamviva.apk)
+
+Kotlin + Jetpack Compose, no WebView — native TMDB browsing, Media3/ExoPlayer playback, streams resolved natively. Source: [`streamviva-android`](https://github.com/loak7993-code/streamviva-android)
+
 The original P-Stream project was discontinued in March 2026 and its ecosystem (providers package, docs, proxy, backend) was taken down. StreamViva is the living continuation: **35 working stream sources**, a fixed build chain, green CI, and verified end-to-end playback for movies, TV shows, and anime.
 
 ## What works

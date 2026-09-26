@@ -88,7 +88,7 @@ export function Navigation(props: NavigationProps) {
             "transition-[background-color,backdrop-filter] duration-300 ease-in-out",
             props.doBackground
               ? props.clearBackground
-                ? "backdrop-blur-md bg-transparent"
+                ? "bg-transparent"
                 : "bg-background-main"
               : "bg-transparent",
           )}
@@ -104,9 +104,7 @@ export function Navigation(props: NavigationProps) {
               "transition-[background-color,backdrop-filter,opacity] duration-300 ease-in-out",
               props.bg ? "opacity-100" : "opacity-0",
               "absolute inset-0 block h-[11rem]",
-              props.clearBackground
-                ? "backdrop-blur-md bg-transparent"
-                : "bg-background-main",
+              props.clearBackground ? "bg-transparent" : "bg-background-main",
             )}
             style={{
               maskImage: `linear-gradient(
@@ -148,7 +146,7 @@ export function Navigation(props: NavigationProps) {
                   <a
                     onClick={() => handleClick("/discover")}
                     rel="noreferrer"
-                    className="text-xl text-white tabbable rounded-full backdrop-blur-lg"
+                    className="text-xl text-white tabbable rounded-full"
                   >
                     <IconPatch
                       icon={Icons.RISING_STAR}
@@ -161,7 +159,7 @@ export function Navigation(props: NavigationProps) {
                   <a
                     onClick={() => handleClick("/")}
                     rel="noreferrer"
-                    className="text-lg text-white tabbable rounded-full backdrop-blur-lg"
+                    className="text-lg text-white tabbable rounded-full"
                   >
                     <IconPatch
                       icon={Icons.SEARCH}
@@ -174,7 +172,7 @@ export function Navigation(props: NavigationProps) {
               <a
                 onClick={() => openNotifications()}
                 rel="noreferrer"
-                className="text-xl text-white tabbable rounded-full backdrop-blur-lg relative"
+                className="text-xl text-white tabbable rounded-full relative"
               >
                 <IconPatch icon={Icons.BELL} clickable downsized navigation />
                 {(() => {

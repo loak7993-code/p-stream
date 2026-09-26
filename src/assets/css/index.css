@@ -56,8 +56,11 @@ html[data-no-scroll] body {
 /* soft ambient aura — quiet depth at the top of the page */
 body::before {
   content: "";
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60vh;
   pointer-events: none;
   z-index: 0;
   background:
