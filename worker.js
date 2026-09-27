@@ -116,6 +116,15 @@ async function handleSimpleProxy(request, url) {
   } catch (e) {
     return cors(new Response(`proxy error: ${e.message}`, { status: 502 }));
   }
+  if (upstream.status >= 500) {
+    const errText = await upstream.text().catch(() => "");
+    return cors(
+      new Response(`upstream ${upstream.status}: ${errText.slice(0, 200)}`, {
+        status: upstream.status,
+        headers: { "content-type": "text/plain" },
+      }),
+    );
+  }
 
   const rh = new Headers();
   for (const k of [
@@ -164,6 +173,33 @@ async function fetchUpstream(target, headers) {
   return fetch(target, { headers: fwd, redirect: "follow" });
 }
 
+/**
+ * vidsrc mirror tokens are IP-bound. Cloudflare Workers egress IPs rotate
+ * across invocations, so a token minted in one request dies in the next.
+ * Fix: every worker invocation re-issues its OWN token (generate.php) and
+ * swaps it into the target URL before fetching — token and fetch share the
+ * same invocation, hence the same egress IP.
+ */
+async function retokenize(target) {
+  try {
+    const m = target.match(/^(https?:\/\/[^\/]+)/);
+    if (!m || !/[?&]token=/.test(target)) return target;
+    const host = m[1];
+    const tokenRes = await fetch(host + "/generate.php", {
+      headers: { "user-agent": UA },
+    });
+    if (tokenRes.status === 429 || tokenRes.status >= 500) {
+      await new Promise((r) => setTimeout(r, 1100));
+    }
+    if (!tokenRes.ok) return target;
+    let token = (await tokenRes.text()).trim();
+    if (!token || token.startsWith("<") || token.length < 20) return target;
+    return target.replace(/([?&])token=[^&]*/, "$1token=" + encodeURIComponent(token));
+  } catch {
+    return target;
+  }
+}
+
 async function handleM3U8Proxy(request, url, origin) {
   const target = url.searchParams.get("url");
   if (!target)
@@ -179,7 +215,12 @@ async function handleM3U8Proxy(request, url, origin) {
 
   let resp;
   try {
-    resp = await fetchUpstream(target, headers);
+    resp = await fetchUpstream(await retokenize(target), headers);
+    if (resp.status === 403 || resp.status === 401) {
+      // one retry with a fresh token (mirrors rate-limit generate.php)
+      await new Promise((r) => setTimeout(r, 900));
+      resp = await fetchUpstream(await retokenize(target), headers);
+    }
   } catch (e) {
     return cors(new Response(`m3u8-proxy error: ${e.message}`, { status: 502 }));
   }

@@ -6,6 +6,7 @@ import { getReleaseDetails } from "@/backend/metadata/traktApi";
 import type { TraktReleaseResponse } from "@/backend/metadata/types/trakt";
 import { Button } from "@/components/buttons/Button";
 import { IconPatch } from "@/components/buttons/IconPatch";
+import { DownloadButton } from "@/components/downloads/DownloadButton";
 import { GroupDropdown } from "@/components/form/GroupDropdown";
 import { Icon, Icons } from "@/components/Icon";
 import { MediaBookmarkButton } from "@/components/media/MediaBookmark";
@@ -230,6 +231,41 @@ export function DetailsBody({
                     : t("details.play")}
             </span>
           </Button>
+          <div className="relative">
+            <DownloadButton
+              media={
+                data.type === "show" &&
+                showProgress?.season &&
+                showProgress?.episode
+                  ? {
+                      type: "show",
+                      title: data.title,
+                      releaseYear: data.releaseDate
+                        ? new Date(data.releaseDate).getFullYear()
+                        : 0,
+                      tmdbId: String(data.id),
+                      imdbId: data.imdbId,
+                      season: {
+                        number: showProgress.season.number,
+                        tmdbId: showProgress.season.id ?? String(data.id),
+                      },
+                      episode: {
+                        number: showProgress.episode.number,
+                        tmdbId: showProgress.episode.id ?? String(data.id),
+                      },
+                    }
+                  : {
+                      type: "movie" as const,
+                      title: data.title,
+                      releaseYear: data.releaseDate
+                        ? new Date(data.releaseDate).getFullYear()
+                        : 0,
+                      tmdbId: String(data.id),
+                      imdbId: data.imdbId,
+                    }
+              }
+            />
+          </div>
           <div className="flex items-center gap-1 flex-shrink-0">
             <MediaBookmarkButton
               media={{
