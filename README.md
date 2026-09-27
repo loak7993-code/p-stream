@@ -9,6 +9,10 @@
 
 Kotlin + Jetpack Compose, no WebView — native TMDB browsing, Media3/ExoPlayer playback, streams resolved natively. Source: [`streamviva-android`](https://github.com/loak7993-code/streamviva-android)
 
+**📺 webOS TV app:** &nbsp;[![Download IPK](https://img.shields.io/badge/Download-StreamViva.ipk-E50914?style=for-the-badge&logo=lg&logoColor=white)](https://streamviva.satisfying-discovery.workers.dev/streamviva-webos.ipk)
+
+10-foot UI with full remote (D-pad) navigation, native HLS playback, 60+ subtitle languages. Sideload via [Developer Mode](https://github.com/loak7993-code/streamviva-webos#install). Source: [`streamviva-webos`](https://github.com/loak7993-code/streamviva-webos)
+
 The original P-Stream project was discontinued in March 2026 and its ecosystem (providers package, docs, proxy, backend) was taken down. StreamViva is the living continuation: **35 working stream sources**, a fixed build chain, green CI, and verified end-to-end playback for movies, TV shows, and anime.
 
 ## What works
